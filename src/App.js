@@ -1,6 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
 import Container from '@mui/material/Container';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
 
 function App() {
   const [color, setColor] = useState('blue')
@@ -8,14 +10,8 @@ function App() {
   return (
     <div className={"App bg-dark-" + color + " light-" + color}>
       <Container maxWidth="sm">
-        <div id="title">
-          <h1>Tic-Tac-Toe</h1>
-        </div>
-
-        <div id="footer">
-          <p>Designed by <b>Saeed Ahmadnia</b></p>
-          <p>December 2021</p>
-        </div>
+        <Header />
+        <Footer />
       </Container>
     </div>
   );
