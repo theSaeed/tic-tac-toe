@@ -1,3 +1,13 @@
+:root {
+  --darkBlue: #0A1929;
+  --semiDarkBlue: #0F263E;
+  --semiLightBlue: #0059B2;
+  --lightBlue: #007FFF;
+  --transition-duration: 0.2s;
+  --transition-timing-function: ease-in-out;
+  --trainstion-delay: 0s;
+}
+
 .App {
   width: 100%;
   min-height: 100%;
