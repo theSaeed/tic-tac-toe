@@ -3,16 +3,28 @@
   --semiDarkBlue: #0F263E;
   --semiLightBlue: #0059B2;
   --lightBlue: #007FFF;
-  --transition-duration: 0.2s;
-  --transition-timing-function: ease-in-out;
+
+  --darkRed: #290A12;
+  --semiDarkRed: #3E0F1B;
+  --semiLightRed: #B2003B;
+  --lightRed: #FF0055;
+
+  --transition-duration: 0.3s;
+  --transition-border-duration: 0.2s;
+  --transition-timing-function: linear;
   --trainstion-delay: 0s;
 }
+
 
 .App {
   width: 100%;
   min-height: 100%;
   align-items: center;
   display: flex;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay);
 }
 
 .bg-dark-blue {
@@ -51,4 +63,116 @@
 
 #footer p {
   margin: 0;
+}
+
+.game-table-blue {
+  padding: 0 !important;
+  color: var(--semiLightBlue) !important;
+  background-color: var(--darkBlue) !important;
+  border: 1px solid var(--semiLightBlue) !important;
+  border-radius: 15px !important;
+  width: 100% !important;
+  height: 126.66px !important;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+.game-table-blue:hover {
+  background-color: var(--semiDarkBlue) !important;
+  border: 2px solid var(--lightBlue) !important;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+.game-table-blue:active {
+  border: 1px solid rgba(0, 0, 0, 0) !important;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+
+.game-table-red {
+  padding: 0 !important;
+  color: var(--semiLightRed) !important;
+  background-color: var(--darkRed) !important;
+  border: 1px solid var(--semiLightRed) !important;
+  border-radius: 15px !important;
+  width: 100% !important;
+  height: 126.66px !important;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+.game-table-red:hover {
+  background-color: var(--semiDarkRed) !important;
+  border: 2px solid var(--lightRed) !important;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+.game-table-red:active {
+  border: 1px solid rgba(0, 0, 0, 0) !important;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+
+.game-table-disabled {
+  padding: 0 !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: 'none' !important;
+  border-radius: 15px !important;
+  width: 100% !important;
+  height: 126.66px !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+
+.gradient {
+  /* background-color: white; */
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+
+.gradient-disabled {
+  opacity: 0.0;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+
+.gradient-blue {
+  background-color: var(--lightBlue) !important;
+  background-image: linear-gradient(to top left, var(--semiLightBlue), var(--lightBlue)) !important;
+  opacity: 1.0;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+
+.gradient-red {
+  background-color: var(--lightRed) !important;
+  background-image: linear-gradient(to top left, var(--semiLightRed), var(--lightRed)) !important;
+  opacity: 1.0;
+  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
 }

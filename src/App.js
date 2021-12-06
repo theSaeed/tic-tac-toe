@@ -7,7 +7,20 @@ import { Cell } from './components/Cell';
 import Grid from '@mui/material/Grid';
 
 function App() {
-  const [color, setColor] = useState('blue')
+  const [color, setColor] = useState('blue');
+  const [gameTable, setGameTable] = useState([null, null, null, null, null, null, null, null, null]);
+  
+  function chooseCell(i) {
+    let newGameTable = gameTable.slice();
+    newGameTable[i] = color;
+    setGameTable(newGameTable);
+    setColor(color==='blue'? 'red':'blue');
+  }
+
+  var cells = [];
+  for (var i = 0; i < 9; i++) {
+    cells.push(<Cell key={i} color={color} value={gameTable[i]} i={i} onClick={chooseCell}/>);
+  }
 
   return (
     <div className={"App bg-dark-" + color + " light-" + color}>
@@ -15,17 +28,9 @@ function App() {
         <Header />
 
         <Grid container spacing={1}>
-          <Cell color={color} />
-          <Cell color={color} />
-          <Cell color={color} />
-          <Cell color={color} />
-          <Cell color={color} />
-          <Cell color={color} />
-          <Cell color={color} />
-          <Cell color={color} />
-          <Cell color={color} />
+          {cells}
         </Grid>
-        {/* <button onClick={() => setColor(color=='blue'? 'red':'blue')} >Change Color</button> */}
+
         <Footer />
       </Container>
     </div>

@@ -14,25 +14,38 @@ const semiLightRed = '#B2003B';
 const lightRed = '#FF0055';
 
 export const Cell = (props) => {
-    const ColorButton = styled(Button)(({ theme }) => ({
-        color: theme.palette.getContrastText(props.color=='blue'? darkBlue:darkRed),
-        backgroundColor: props.color=='blue'? darkBlue:darkRed,
-        border: '1px solid' + (props.color=='blue'? semiLightBlue:semiLightRed),
-        borderRadius: '15px',
-        width: '100%',
-        height: '126.66px',
-        '&:hover': {
-            backgroundColor: props.color=='blue'? semiDarkBlue:semiDarkRed,
-            border: '2px solid ' + (props.color=='blue'? lightBlue:lightRed),
-        },
-        '&:active': {
-            border: '1px solid rgba(0, 0, 0, 0)',
-        }
-    }));
       
+    function buttonClassName() {
+        if (props.value===null) {
+            if (props.color==='blue') {
+                return 'game-table-blue';
+            } else {
+                return 'game-table-red';
+            }
+        } else if (props.value==='blue') {
+            return 'game-table-disabled';
+        } else {
+            return 'game-table-disabled';
+        }
+    }
+
+    function gradientClassName() {
+        if (props.value===null) {
+            return 'gradient-disabled'
+        }
+        if (props.value==='blue') {
+            return 'gradient-blue';
+        } else {
+            return 'gradient-red';
+        }
+    }
+
     return (
         <Grid item xs={4}>
-            <ColorButton className='btn-blue' />
+            <Button onClick={() => props.onClick(props.i)} className={buttonClassName()} >
+                <div className={"gradient " + gradientClassName()}></div>
+            </Button>
+            {/* {props.value===null? <Button onClick={() => props.onClick(props.i)} className={className()} /> : <Button className={className()} disabled />} */}
         </Grid>
     )
 }
