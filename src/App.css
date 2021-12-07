@@ -9,7 +9,7 @@
   --semiLightRed: #B2003B;
   --lightRed: #FF0055;
 
-  --transition-duration: 0.3s;
+  --transition-duration: 0.2s;
   --transition-border-duration: 0.2s;
   --transition-timing-function: linear;
   --trainstion-delay: 0s;
@@ -24,7 +24,7 @@
   transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
     background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
     opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
-    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay);
+    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
 }
 
 .bg-dark-blue {
@@ -187,6 +187,7 @@ svg {
 }
 
 .gradient {
+  position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 15px;
@@ -196,30 +197,26 @@ svg {
     border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
 }
 
-.gradient-disabled {
+.gradient-blue-disabled {
+  background-color: var(--lightBlue) !important;
+  background-image: linear-gradient(to top left, var(--semiLightBlue), var(--lightBlue)) !important;
   opacity: 0.0;
-  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
-    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
-    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
-    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
+}
+
+.gradient-red-disabled {
+  background-color: var(--lightRed) !important;
+  background-image: linear-gradient(to top left, var(--semiLightRed), var(--lightRed)) !important;
+  opacity: 0.0;
 }
 
 .gradient-blue {
   background-color: var(--lightBlue) !important;
   background-image: linear-gradient(to top left, var(--semiLightBlue), var(--lightBlue)) !important;
   opacity: 1.0;
-  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
-    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
-    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
-    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
 }
 
 .gradient-red {
   background-color: var(--lightRed) !important;
   background-image: linear-gradient(to top left, var(--semiLightRed), var(--lightRed)) !important;
   opacity: 1.0;
-  transition: color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
-    background-color var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
-    opacity var(--transition-duration) var(--transition-timing-function) var(--trainstion-delay),
-    border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
 }

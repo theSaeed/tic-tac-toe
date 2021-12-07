@@ -29,23 +29,28 @@ export const Cell = (props) => {
         }
     }
 
-    function gradientClassName() {
-        if (props.value===null) {
-            return 'gradient-disabled'
-        }
-        if (props.value==='blue') {
-            return 'gradient-blue';
-        } else {
-            return 'gradient-red';
-        }
+    function gradientBlueClassName() {
+        if (props.value===null)
+            return '-disabled';
+        if (props.value==='red')
+            return '-disabled';
+        return '';
+    }
+
+    function gradientRedClassName() {
+        if (props.value===null)
+            return '-disabled';
+        if (props.value==='blue')
+            return '-disabled';
+        return '';
     }
 
     return (
         <Grid item xs={4}>
             <Button onClick={() => props.onClick(props.i)} className={buttonClassName()} >
-                <div className={"gradient " + gradientClassName()}></div>
+                <div className={"gradient gradient-blue" + gradientBlueClassName()}></div>
+                <div className={"gradient gradient-red" + gradientRedClassName()}></div>
             </Button>
-            {/* {props.value===null? <Button onClick={() => props.onClick(props.i)} className={className()} /> : <Button className={className()} disabled />} */}
         </Grid>
     )
 }

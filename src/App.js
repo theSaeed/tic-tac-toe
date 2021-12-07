@@ -12,12 +12,30 @@ import UndoIcon from '@mui/icons-material/Undo';
 function App() {
   const [color, setColor] = useState('blue');
   const [gameTable, setGameTable] = useState([null, null, null, null, null, null, null, null, null]);
-  
+  const [history, setHistory] = useState([]);
+
+  function changeTurn() {
+    setColor(color==='blue'? 'red':'blue');
+  }
+
   function chooseCell(i) {
+    let newHistory = history.slice();
+    newHistory.push(gameTable)
+    setHistory(newHistory);
+
     let newGameTable = gameTable.slice();
     newGameTable[i] = color;
     setGameTable(newGameTable);
-    setColor(color==='blue'? 'red':'blue');
+    changeTurn();
+  }
+
+  function undo() {
+    if (history.length > 0) {
+      let newHistory = history.slice();
+      setGameTable(newHistory.pop());
+      setHistory(newHistory);
+      changeTurn();
+    }
   }
 
   var cells = [];
@@ -33,7 +51,7 @@ function App() {
         <Grid container spacing={1}>
           {cells}
 
-          <Grid item xs={4}> <Button className={'btn-' + color}>
+          <Grid item xs={4}> <Button className={'btn-' + color} onClick={() => undo()}>
           <UndoIcon fontSize='small'/> Undo
           </Button> </Grid>
 
