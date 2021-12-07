@@ -87,6 +87,7 @@ svg {
     border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
 }
 .btn-blue:hover {
+  color: var(--LightBlue) !important;
   background-color: var(--semiDarkBlue) !important;
   border: 2px solid var(--lightBlue) !important;
 }
@@ -109,6 +110,7 @@ svg {
     border var(--transition-border-duration) var(--transition-timing-function) var(--trainstion-delay) !important;
 }
 .btn-red:hover {
+  color: var(--LightRed) !important;
   background-color: var(--semiDarkRed) !important;
   border: 2px solid var(--lightRed) !important;
 }

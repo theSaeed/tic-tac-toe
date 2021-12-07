@@ -1,17 +1,6 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
-
-const darkBlue = '#0A1929';
-const semiDarkBlue = '#0F263E';
-const semiLightBlue = '#0059B2';
-const lightBlue = '#007FFF';
-
-const darkRed = '#290A12';
-const semiDarkRed = '#3E0F1B';
-const semiLightRed = '#B2003B';
-const lightRed = '#FF0055';
 
 export const Cell = (props) => {
       
