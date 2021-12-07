@@ -5,6 +5,9 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Cell } from './components/Cell';
 import Grid from '@mui/material/Grid';
+import { Button } from '@mui/material';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import UndoIcon from '@mui/icons-material/Undo';
 
 function App() {
   const [color, setColor] = useState('blue');
@@ -29,6 +32,18 @@ function App() {
 
         <Grid container spacing={1}>
           {cells}
+
+          <Grid item xs={4}> <Button className={'btn-' + color}>
+          <UndoIcon fontSize='small'/> Undo
+          </Button> </Grid>
+
+          <Grid item xs={4}> <div id='label-turn'>
+            <p><b>{color==='blue'?'Blue':'Red'}</b></p>
+          </div> </Grid>
+
+          <Grid item xs={4}> <Button className={'btn-' + color}>
+            <AddCircleIcon fontSize='small'/> New Game
+          </Button> </Grid>
         </Grid>
 
         <Footer />
