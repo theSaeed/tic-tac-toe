@@ -38,6 +38,12 @@ function App() {
     }
   }
 
+  function newGame() {
+    setColor('blue');
+    setGameTable([null, null, null, null, null, null, null, null, null]);
+    setHistory([]);
+  }
+
   var cells = [];
   for (var i = 0; i < 9; i++) {
     cells.push(<Cell key={i} color={color} value={gameTable[i]} i={i} onClick={chooseCell}/>);
@@ -59,7 +65,7 @@ function App() {
             <p><b>{color==='blue'?'Blue':'Red'}</b></p>
           </div> </Grid>
 
-          <Grid item xs={4}> <Button className={'btn-' + color}>
+          <Grid item xs={4}> <Button className={'btn-' + color} onClick={() => newGame()}>
             <AddCircleIcon fontSize='small'/> New Game
           </Button> </Grid>
         </Grid>
