@@ -126,21 +126,21 @@ function App() {
       >
         <p style={{'font-size': '4em'}}>{winnerMsg}</p>
       </Backdrop>
-      <Container maxWidth="xs">
+      <Container className="container">
         <Header />
 
         <Grid container spacing={1}>
           {cells}
 
-          <Grid item xs={4}> <Button className={'btn-' + color} onClick={() => undo()}>
+          <Grid item xs={5}> <Button className={'btn-' + color} onClick={() => undo()}>
           <UndoIcon fontSize='small'/> Undo
           </Button> </Grid>
 
-          <Grid item xs={4}> <div id='label-turn'>
+          <Grid item xs={2}> <div id='label-turn'>
             <p><b>{color==='blue'?'Blue':'Red'}</b></p>
           </div> </Grid>
 
-          <Grid item xs={4}> <Button className={'btn-' + color} onClick={() => newGame()}>
+          <Grid item xs={5}> <Button className={'btn-' + color} onClick={() => newGame()}>
             <AddCircleIcon fontSize='small'/> New Game
           </Button> </Grid>
         </Grid>
